@@ -5,8 +5,16 @@
 (require 'use-package)
 (require 'init-loader)
 
-; (use-package exec-path-from-shell)
-; (exec-path-from-shell-initialize)
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+(use-package exec-path-from-shell)
+(exec-path-from-shell-initialize)
+
+;; Minor modes
 
 (use-package paredit
   :ensure t)
