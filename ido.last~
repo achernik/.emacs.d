@@ -1,0 +1,55 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/achernik/Sites/" . "qlean/")
+ ("/Users/" . "achernik/")
+ ("/Users/achernik/" . "Sites/")
+ ("/Users/achernik/.emacs.d/" . "inits/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/achernik/Sites/qlean/app/services/trackings/"
+ "/Users/achernik/Sites/qlean/app/controllers/api/clients/v1/"
+ "/Users/achernik/Sites/qlean/"
+ "/Users/achernik/.emacs.d/"
+ "/Users/achernik/.emacs.d/inits/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "Gemfile"
+ "init.el"
+ "99_appearance.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/achernik/Sites/qlean/app/" (22016 14060 0 0) "workers/" "views/" "validators/" "uploaders/" "services/" "serializers/" "queries/" "policies/" "models/" "mailers/" "interactors/" "inputs/" "helpers/" "forms/" "errors/" "decorators/" "controllers/" "concerns/" "authorizers/" "assets/" "admin/" ".DS_Store" "../" "./")
+
+ ("/Users/achernik/Sites/qlean/app/controllers/" (22022 44672 0 0) "visitors_controller.rb" "users_controller.rb" "templates_controller.rb" "specials/" "settings_controller.rb" "sessions_controller.rb" "seo_pages_controller.rb" "reviews_controller.rb" "promocodes_controller.rb" "pixels_controller.rb" "payture/" "passwords_controller.rb" "partners_controller.rb" "orders_controller.rb" "order_flow_controller.rb" "order_final_controller.rb" "order/" "omniauth_sessions_controller.rb" "missing_addresses_controller.rb" "loyalty_cards_controller.rb" "jobs_controller.rb" "invites_controller.rb" "inviters_controller.rb" "errors_controller.rb" "crm/" "confirmations_controller.rb" "concerns/" "cities_controller.rb" "call_api/" "availabilities_controller.rb" "authenticated_controller.rb" "application_controller.rb" "api_controller.rb" "api/" "agent_invitations_controller.rb" "admin/" "account/" "../" "./")
+
+ ("/Users/achernik/Sites/qlean/app/controllers/api/" (22001 41224 0 0) "v1/" "crm/" "clients/" "cleaner_controller.rb" "base_controller.rb" "../" "./")
+
+ ("/Users/achernik/Sites/qlean/app/controllers/api/clients/" (22001 41224 0 0) "v1/" "base_controller.rb" "../" "./")
+
+ ("/Users/achernik/.emacs.d/" (22026 62582 0 0) "projectile-bookmarks.eld" "inits/" "init.el~" "init.el" "ido.last~" "ido.last" "Cask" "auto-save-list/" ".cask/" "../" "./")
+
+ ("/Users/achernik/Sites/qlean/" (22026 63257 0 0) "zeus.json" "vendor/" "tmp/" "spec/" "shippable.yml" "scripts/" "README.md" "Rakefile" "qlean.yml" "public/" "package.json" "node_modules/" "log/" "lib/" "gulpfile.js" "Guardfile" "Gemfile.lock" "Gemfile" "example/" "docs/" "db/" "config.ru" "config/" "bower.json" "bin/" "app/" ".zeus.sock" ".vexor.yml" ".rubocop.yml" ".rspec-local" ".rspec" ".powrc" ".gitignore" ".git/" ".env.test" ".env.development" ".DS_Store" ".bundle/" ".bowerrc" "../" "./")
+
+ ("/Users/achernik/Sites/qlean/app/services/trackings/" (22026 63557 0 0) "../" "./")
+
+ ("/Users/achernik/Sites/qlean/app/controllers/api/clients/v1/" (22026 63440 0 0) "users_controller.rb" "subscriptions_controller.rb" "subscription_types_controller.rb" "settings_controller.rb" "sessions_controller.rb" "services_controller.rb" "reviews_controller.rb" "promocodes_controller.rb" "orders_controller.rb" "loyalty_cards_controller.rb" "geocodings_controller.rb" "credit_cards_controller.rb" "cleaners_controller.rb" "city_requests_controller.rb" "calculations_controller.rb" "available_times_controller.rb" "available_dates_controller.rb" "addresses_controller.rb" "../" "./")
+
+ ("/Users/achernik/Sites/" (21851 9698 0 0) "reform/" "qlean/" "hotornot/" "format-odin/" "exchanges/" "ex_copycopter/" "analyze_heap.rb" ".DS_Store" "../" "./")
+
+ ("/Users/" (21569 3766 0 0) "Shared/" "Guest/" "achernik/" ".localized" "../" "./")
+
+ ("/Users/achernik/.emacs.d/inits/" (22026 62271 0 0) "99_appearance.el~" "99_appearance.el" "../" "./")
+
+ ("/Users/achernik/" (22026 59936 0 0) "soapui-settings.xml" "Sites/" "Public/" "projects/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "default-soapui-workspace.xml" "corn-soapui-project.xml" "corn/" "Applications/" ".ydrpdone" ".Xauthority" ".viminfo" ".v8flags.3.28.71.19.achernik.json" ".v8flags.3.14.5.9.achernik.json" ".Trash/" ".subversion/" ".ssh/" ".soapuios/" ".rspec" ".rnd" ".rediscli_history" ".rbenv/" ".psql_history" ".pry_history" ".pow/" ".pgpass" ".pgadmin_histoqueries" ".npm/" ".node-gyp/" ".netrc" ".mongorc.js" ".mina_history" ".m2/" ".local/" ".live-packs/" ".lfpcnkirc" ".lesshst" ".lein/" ".irb_history" ".heroku/" ".guard_history" ".gitk" ".gitignore" ".gitconfig" ".gem/" ".filezilla/" ".emacs.d/" ".DS_Store" ".dropbox/" ".dbshell" ".cups/" ".config/" ".coffee_history" ".CFUserTextEncoding" ".cache/" ".bundle/" ".bash_rc" ".bash_profile" ".bash_history" ".adobe/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

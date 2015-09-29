@@ -1,0 +1,32 @@
+(source gnu)
+(source melpa-stable)
+
+(depends-on "init-loader")
+(depends-on "use-package")
+
+(depends-on "exec-path-from-shell")
+
+(depends-on "cyberpunk-theme")
+
+(depends-on "ace-jump-mode")
+(depends-on "browse-kill-ring")
+(depends-on "expand-region")
+(depends-on "undo-tree")
+(depends-on "rainbow-delimiters")
+(depends-on "paredit")
+(depends-on "auto-complete")
+(depends-on "ruby-mode")
+(depends-on "rspec-mode")
+(depends-on "scss-mode")
+(depends-on "coffee-mode")
+(depends-on "slim-mode")
+(depends-on "js2-mode")
+(depends-on "markdown-mode")
+(depends-on "smartparens")
+(depends-on "idomenu")
+(depends-on "ag")
+(depends-on "yaml-mode")
+(depends-on "haml-mode")
+(depends-on "company")
+
+(depends-on "projectile")
