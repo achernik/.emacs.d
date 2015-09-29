@@ -10,9 +10,9 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
-
-(use-package exec-path-from-shell)
-(exec-path-from-shell-initialize)
+(setq ido-save-directory-list-file
+      (concat temporary-file-directory
+              "ido.last"))
 
 ;; Minor modes
 
