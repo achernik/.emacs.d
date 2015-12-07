@@ -1,11 +1,19 @@
-(toggle-scroll-bar -1)
-(menu-bar-mode -1)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+(scroll-bar-mode -1)
+
 (tool-bar-mode -1)
 (setq inhibit-startup-message t)
 (setq echo-keystrokes 0.1)
-(add-to-list 'default-frame-alist '(width . 177))
-(add-to-list 'default-frame-alist '(height . 49))
-(set-face-attribute 'default nil :font "Source Code Pro 13")
+
+;; (set-face-attribute 'default nil :font "Anonymous Pro 15")
+(set-face-attribute 'default nil :family "Anonymous Pro"
+				 :height 150
+				 :weight 'normal)
+(set-face-foreground 'git-gutter-fr:modified "#ffcc66")
+(set-face-foreground 'git-gutter-fr:added "#99cc99")
+(set-face-foreground 'git-gutter-fr:deleted "#d27b53")
 
 (setq c-basic-offset 2)
 (setq css-indent-offset 2)
@@ -15,7 +23,7 @@
 (setq init-loader-show-log-after-init nil)
 
 (global-hl-line-mode 1)
-(load-theme 'cyberpunk-theme t)
+(load-theme 'base16-eighties-dark t)
 
 (require 'ansi-color)
 
