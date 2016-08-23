@@ -1,9 +1,60 @@
-(require 'cask "/usr/local/share/emacs/site-lisp/cask.el")
-(cask-initialize)
+(require 'cl)
+(require 'package)
+
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+(setq package-pinned-packages
+      '((init-loader          . "melpa-stable")
+	(exec-path-from-shell . "melpa-stable")
+	(browse-kill-ring     . "melpa-stable")
+	(ido-vertical-mode    . "melpa-stable")
+	(flx-ido              . "melpa-stable")
+	(projectile           . "melpa-stable")
+	(clojure-mode         . "melpa-stable")
+	(cider                . "melpa-stable")
+	(paredit              . "melpa-stable")
+	(smartparens          . "melpa-stable")
+	(rainbow-delimiters   . "melpa-stable")
+	(rspec-mode           . "melpa-stable")
+	(scss-mode            . "melpa-stable")
+	(coffee-mode          . "melpa-stable")
+	(slim-mode            . "melpa-stable")
+	(markdown-mode        . "melpa-stable")
+	(git-gutter-fringe    . "melpa-stable")
+	(expand-region        . "melpa-stable")
+	(ag                   . "melpa-stable")
+	(yaml-mode            . "melpa-stable")
+	(haml-mode            . "melpa-stable")
+	(company              . "melpa-stable")
+	(yasnippet            . "melpa-stable")
+	(idomenu              . "melpa-stable")
+	(web-mode             . "melpa-stable")
+
+	(base16-theme         . "melpa")
+	(sql-indent           . "melpa")
+	(use-package          . "melpa")
+	(undo-tree            . "melpa")
+
+	(avy                  . "gnu")))
+
+(package-initialize)
+(setq package-contents-refreshed nil)
+
+(mapc (lambda (pinned-package)
+  (let ((package (car pinned-package))
+        (archive (cdr pinned-package)))
+    (unless (package-installed-p package)
+            (unless package-contents-refreshed
+              (package-refresh-contents)
+              (setq package-contents-refreshed t))
+      (message "Installing %s from %s" package archive)
+      (package-install package))))
+      package-pinned-packages)
+
+(add-to-list 'load-path (expand-file-name "lib" user-emacs-directory))
 
 (require 'use-package)
-(require 'init-loader)
-
 ;; store all backup and autosave files in the tmp dir
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
@@ -17,11 +68,7 @@
 (setq auto-save-default nil)
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
-
-(use-package yasnippet
-  :ensure t
-  :init
-  (yas-global-mode))
+(setq require-final-newline t)
 
 (setq mac-command-key-is-meta)
 (setq mac-option-key-is-meta nil)
@@ -32,49 +79,53 @@
 
 (add-hook 'server-visit-hook 'raise-frame)
 
-(use-package smartparens
-  :ensure t)
+
+(use-package init-loader)
+
+(use-package base16-theme)
+
+(use-package web-mode
+  :init
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)))
+
+(use-package yasnippet
+  :init
+  (yas-global-mode))
+
+(use-package smartparens)
 
 (use-package git-gutter-fringe
-  :ensure t
   :init
   (custom-set-variables '(git-gutter:update-interval 1))
   (global-git-gutter-mode 1))
 
 (global-linum-mode 1)
 
-(use-package paredit
-  :ensure t)
+(use-package paredit)
 
-(use-package rainbow-delimiters
-  :ensure t)
+(use-package rainbow-delimiters)
 
-(use-package undo-tree
-  :ensure t)
+(use-package undo-tree)
 
-(use-package ace-jump-mode
-  :ensure t
-  :bind ("C-o" . ace-jump-mode))
+(use-package avy
+  :bind
+  ("C-;" . avy-goto-word-or-subword-1)
+  ("C-M-;" . avy-goto-char-in-line)
+  ("M-g g" . avy-goto-line))
 
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
-(use-package ag
-  :ensure t)
+(use-package ag)
 
 (use-package company
-  :ensure t
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
-(use-package cyberpunk-theme
-  :ensure t)
-
-(use-package idomenu
-  :ensure t)
+(use-package idomenu)
 
 (use-package flx-ido
-  :ensure t
   :init
   (setq ido-create-new-buffer 'always)
   (setq ido-enable-flex-matching t)
@@ -89,14 +140,17 @@
   (flx-ido-mode 1))
 
 (use-package projectile
-  :ensure t
   :init
   (setq projectile-switch-project-action 'projectile-dired)
   :config
   (projectile-global-mode))
 
-;; Major modes
-;;
+(defun close-project-buffers-and-kill-frame ()
+  (interactive)
+  (projectile-kill-buffers)
+  (delete-frame))
+
+(global-set-key (kbd "C-x p k") 'close-project-buffers-and-kill-frame)
 
 (use-package ruby-mode)
 (use-package rspec-mode)
