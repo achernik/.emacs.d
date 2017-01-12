@@ -30,6 +30,7 @@
 	(yasnippet            . "melpa-stable")
 	(idomenu              . "melpa-stable")
 	(web-mode             . "melpa-stable")
+	(clj-refactor         . "melpa-stable")
 
 	(base16-theme         . "melpa")
 	(sql-indent           . "melpa")
@@ -43,11 +44,11 @@
 
 (mapc (lambda (pinned-package)
   (let ((package (car pinned-package))
-        (archive (cdr pinned-package)))
+	(archive (cdr pinned-package)))
     (unless (package-installed-p package)
-            (unless package-contents-refreshed
-              (package-refresh-contents)
-              (setq package-contents-refreshed t))
+	    (unless package-contents-refreshed
+	      (package-refresh-contents)
+	      (setq package-contents-refreshed t))
       (message "Installing %s from %s" package archive)
       (package-install package))))
       package-pinned-packages)
@@ -139,6 +140,10 @@
   (ido-everywhere 1)
   (flx-ido-mode 1))
 
+(use-package ido-vertical-mode
+  :config
+  (ido-vertical-mode 1))
+
 (use-package projectile
   :init
   (setq projectile-switch-project-action 'projectile-dired)
@@ -154,6 +159,8 @@
 
 (use-package ruby-mode)
 (use-package rspec-mode)
+(use-package clojure-mode)
+(use-package clj-refactor)
 
 (use-package scss-mode
   :init

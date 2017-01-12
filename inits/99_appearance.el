@@ -7,10 +7,10 @@
 (setq inhibit-startup-message t)
 (setq echo-keystrokes 0.1)
 
-;; (set-face-attribute 'default nil :font "Anonymous Pro 15")
-(set-face-attribute 'default nil :family "Anonymous Pro"
-				 :height 150
+(set-face-attribute 'default nil :family "Liberation Mono"
+				 :height 130
 				 :weight 'normal)
+
 (set-face-foreground 'git-gutter-fr:modified "#ffcc66")
 (set-face-foreground 'git-gutter-fr:added "#99cc99")
 (set-face-foreground 'git-gutter-fr:deleted "#d27b53")
