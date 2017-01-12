@@ -80,7 +80,6 @@
 
 (add-hook 'server-visit-hook 'raise-frame)
 
-
 (use-package init-loader)
 
 (use-package base16-theme)
@@ -160,7 +159,9 @@
 (use-package ruby-mode)
 (use-package rspec-mode)
 (use-package clojure-mode)
-(use-package clj-refactor)
+(use-package clj-refactor
+  :init
+  (setq cljr-warn-on-eval nil))
 
 (use-package scss-mode
   :init
@@ -183,5 +184,5 @@
 (put 'dired-find-alternate-file 'disabled nil)
 (put 'scroll-left 'disabled nil)
 
-before-make-frame-hook
+;; before-make-frame-hook
 ;; (toggle-frame-maximized)

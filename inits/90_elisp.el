@@ -1,1 +1,1 @@
-(add-hoot 'emacs-lisp-mode-hook #'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook #'paredit-mode)
