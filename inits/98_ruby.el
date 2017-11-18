@@ -1,6 +1,7 @@
 (add-to-list 'auto-mode-alist '("\\.arb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.builder$" . ruby-mode))
 (add-hook 'ruby-mode-hook 'smartparens-mode)
+(add-hook 'ruby-mode-hook #'rubocop-mode)
 
 
 (setq ruby-insert-encoding-magic-comment nil)

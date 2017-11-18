@@ -31,11 +31,15 @@
 	(idomenu              . "melpa-stable")
 	(web-mode             . "melpa-stable")
 	(clj-refactor         . "melpa-stable")
+	(rubocop              . "melpa-stable")
+	(rust-mode            . "melpa-stable")
+	(toml-mode            . "melpa-stable")
 
 	(base16-theme         . "melpa")
 	(sql-indent           . "melpa")
 	(use-package          . "melpa")
 	(undo-tree            . "melpa")
+	(dockerfile-mode      . "melpa")
 
 	(avy                  . "gnu")))
 
@@ -80,6 +84,10 @@
 
 (add-hook 'server-visit-hook 'raise-frame)
 
+(use-package exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 (use-package init-loader)
 
 (use-package base16-theme)
@@ -87,7 +95,10 @@
 (use-package web-mode
   :init
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 4))
+
 
 (use-package yasnippet
   :init
@@ -178,6 +189,13 @@
 (use-package haml-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode)))
+
+(use-package dockerfile-mode)
+
+(use-package rubocop)
+
+(use-package rust-mode)
+(use-package toml-mode)
 
 (init-loader-load)
 
