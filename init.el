@@ -30,17 +30,18 @@
 	(yasnippet            . "melpa-stable")
 	(idomenu              . "melpa-stable")
 	(web-mode             . "melpa-stable")
-	(clj-refactor         . "melpa-stable")
+	;; (clj-refactor         . "melpa-stable")
 	(rubocop              . "melpa-stable")
 	(rust-mode            . "melpa-stable")
-	(toml-mode            . "melpa-stable")
+	(magit                . "melpa-stable")
+	(flycheck             . "merpa-stable")
 
 	(base16-theme         . "melpa")
 	(sql-indent           . "melpa")
 	(use-package          . "melpa")
-	(undo-tree            . "melpa")
 	(dockerfile-mode      . "melpa")
 
+	(undo-tree            . "gnu")
 	(avy                  . "gnu")))
 
 (package-initialize)
@@ -75,7 +76,6 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (setq require-final-newline t)
 
-(setq mac-command-key-is-meta)
 (setq mac-option-key-is-meta nil)
 (setq mac-command-key-is-meta t)
 (setq mac-command-modifier 'meta)
@@ -89,6 +89,11 @@
   (exec-path-from-shell-initialize))
 
 (use-package init-loader)
+
+(use-package magit
+  :bind
+  ("C-x g" . magit-status)
+)
 
 (use-package base16-theme)
 
@@ -170,9 +175,9 @@
 (use-package ruby-mode)
 (use-package rspec-mode)
 (use-package clojure-mode)
-(use-package clj-refactor
-  :init
-  (setq cljr-warn-on-eval nil))
+;; (use-package clj-refactor
+;;   :init
+;;   (setq cljr-warn-on-eval nil))
 
 (use-package scss-mode
   :init
@@ -195,7 +200,11 @@
 (use-package rubocop)
 
 (use-package rust-mode)
-(use-package toml-mode)
+
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
 
 (init-loader-load)
 
@@ -204,3 +213,18 @@
 
 ;; before-make-frame-hook
 ;; (toggle-frame-maximized)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" default)))
+ '(git-gutter:update-interval 1))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

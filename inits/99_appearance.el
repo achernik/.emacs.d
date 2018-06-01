@@ -3,6 +3,8 @@
 
 (scroll-bar-mode -1)
 
+(blink-cursor-mode 0)
+
 (tool-bar-mode -1)
 (setq inhibit-startup-message t)
 (setq echo-keystrokes 0.1)
@@ -23,7 +25,7 @@
 (setq init-loader-show-log-after-init nil)
 
 (global-hl-line-mode 1)
-(load-theme 'base16-eighties-dark t)
+(load-theme 'base16-eighties t)
 
 (require 'ansi-color)
 
