@@ -92,10 +92,11 @@
 
 (use-package magit
   :bind
-  ("C-x g" . magit-status)
-)
+  ("C-x g" . magit-status))
 
-(use-package base16-theme)
+(use-package base16-theme
+  :ensure t
+  :config (load-theme 'base16-tomorrow-night t))
 
 (use-package web-mode
   :init
@@ -114,6 +115,7 @@
 (use-package git-gutter-fringe
   :init
   (custom-set-variables '(git-gutter:update-interval 1))
+  (setq-default left-fringe-width 15)
   (global-git-gutter-mode 1))
 
 (global-linum-mode 1)
@@ -218,10 +220,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
+
+ '(git-gutter:update-interval 1)
+ '(package-selected-packages
    (quote
-    ("9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" default)))
- '(git-gutter:update-interval 1))
+    (yasnippet-snippets yaml-mode web-mode use-package undo-tree sql-indent smartparens slim-mode scss-mode rust-mode rubocop rspec-mode rainbow-delimiters projectile markdown-mode magit init-loader idomenu ido-vertical-mode haml-mode git-gutter-fringe flycheck flx-ido expand-region exec-path-from-shell dockerfile-mode company coffee-mode clj-refactor browse-kill-ring base16-theme avy ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

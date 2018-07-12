@@ -32,4 +32,4 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 (set-fringe-mode '(4 . 0))
-(setq-default truncate-lines 1)
+(setq-default truncate-lines nil)
