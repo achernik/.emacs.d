@@ -10,7 +10,7 @@
 (setq echo-keystrokes 0.1)
 
 (set-face-attribute 'default nil :family "Liberation Mono"
-				 :height 180
+				 :height 140
 				 :weight 'normal)
 
 (set-face-foreground 'git-gutter-fr:modified "#ffcc66")

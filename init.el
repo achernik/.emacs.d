@@ -6,54 +6,53 @@
 
 (setq package-pinned-packages
       '((init-loader          . "melpa-stable")
-        (exec-path-from-shell . "melpa-stable")
-        (browse-kill-ring     . "melpa-stable")
-        (ido-vertical-mode    . "melpa-stable")
-        (flx-ido              . "melpa-stable")
-        (projectile           . "melpa-stable")
-        (clojure-mode         . "melpa-stable")
-        (cider                . "melpa-stable")
-        (paredit              . "melpa-stable")
-        (smartparens          . "melpa-stable")
-        (rainbow-delimiters   . "melpa-stable")
-        (rspec-mode           . "melpa-stable")
-        (scss-mode            . "melpa-stable")
-        (coffee-mode          . "melpa-stable")
-        (slim-mode            . "melpa-stable")
-        (markdown-mode        . "melpa-stable")
-        (git-gutter-fringe    . "melpa-stable")
-        (expand-region        . "melpa-stable")
-        (ag                   . "melpa-stable")
-        (yaml-mode            . "melpa-stable")
-        (haml-mode            . "melpa-stable")
-        (company              . "melpa-stable")
-        (yasnippet            . "melpa-stable")
-        (idomenu              . "melpa-stable")
-        (web-mode             . "melpa-stable")
-        ;; (clj-refactor         . "melpa-stable")
-        (rubocop              . "melpa-stable")
-        (rust-mode            . "melpa-stable")
-        (magit                . "melpa-stable")
-        (flycheck             . "merpa-stable")
+	(exec-path-from-shell . "melpa-stable")
+	(browse-kill-ring     . "melpa-stable")
+	(ido-vertical-mode    . "melpa-stable")
+	(flx-ido              . "melpa-stable")
+	(projectile           . "melpa-stable")
+	;;(clojure-mode         . "melpa-stable")
+	;;(cider                . "melpa-stable")
+	(paredit              . "melpa-stable")
+	(smartparens          . "melpa-stable")
+	(rainbow-delimiters   . "melpa-stable")
+	(rspec-mode           . "melpa-stable")
+	(scss-mode            . "melpa-stable")
+	(coffee-mode          . "melpa-stable")
+	(slim-mode            . "melpa-stable")
+	(markdown-mode        . "melpa-stable")
+	(git-gutter-fringe    . "melpa-stable")
+	(expand-region        . "melpa-stable")
+	(ag                   . "melpa-stable")
+	(yaml-mode            . "melpa-stable")
+	(haml-mode            . "melpa-stable")
+	(company              . "melpa-stable")
+	(yasnippet            . "melpa-stable")
+	(idomenu              . "melpa-stable")
+	(web-mode             . "melpa-stable")
+	;; (clj-refactor         . "melpa-stable")
+	(rubocop              . "melpa-stable")
+	;;(rust-mode            . "melpa-stable")
+	(magit                . "melpa-stable")
+	(flycheck             . "melpa-stable")
 
-        (base16-theme         . "melpa")
-        (sql-indent           . "melpa")
-        (use-package          . "melpa")
-        (dockerfile-mode      . "melpa")
+	(base16-theme         . "melpa")
+	(use-package          . "melpa")
+	(dockerfile-mode      . "melpa")
 
-        (undo-tree            . "gnu")
-        (avy                  . "gnu")))
+	(undo-tree            . "gnu")
+	(avy                  . "gnu")))
 
 (package-initialize)
 (setq package-contents-refreshed nil)
 
 (mapc (lambda (pinned-package)
   (let ((package (car pinned-package))
-        (archive (cdr pinned-package)))
+	(archive (cdr pinned-package)))
     (unless (package-installed-p package)
-            (unless package-contents-refreshed
-              (package-refresh-contents)
-              (setq package-contents-refreshed t))
+	    (unless package-contents-refreshed
+	      (package-refresh-contents)
+	      (setq package-contents-refreshed t))
       (message "Installing %s from %s" package archive)
       (package-install package))))
       package-pinned-packages)
@@ -68,7 +67,7 @@
       `((".*" ,temporary-file-directory t)))
 (setq ido-save-directory-list-file
       (concat temporary-file-directory
-              "ido.last"))
+	      "ido.last"))
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -176,7 +175,7 @@
 
 (use-package ruby-mode)
 (use-package rspec-mode)
-(use-package clojure-mode)
+;;(use-package clojure-mode)
 ;; (use-package clj-refactor
 ;;   :init
 ;;   (setq cljr-warn-on-eval nil))
@@ -201,7 +200,7 @@
 
 (use-package rubocop)
 
-(use-package rust-mode)
+;;(use-package rust-mode)
 
 (use-package flycheck
   :ensure t
@@ -220,11 +219,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-
  '(git-gutter:update-interval 1)
  '(package-selected-packages
    (quote
-    (yasnippet-snippets yaml-mode web-mode use-package undo-tree sql-indent smartparens slim-mode scss-mode rust-mode rubocop rspec-mode rainbow-delimiters projectile markdown-mode magit init-loader idomenu ido-vertical-mode haml-mode git-gutter-fringe flycheck flx-ido expand-region exec-path-from-shell dockerfile-mode company coffee-mode clj-refactor browse-kill-ring base16-theme avy ag))))
+    (yasnippet-snippets yaml-mode web-mode use-package undo-tree smartparens slim-mode scss-mode rust-mode rubocop rspec-mode rainbow-delimiters projectile markdown-mode magit init-loader idomenu ido-vertical-mode haml-mode git-gutter-fringe flycheck flx-ido expand-region exec-path-from-shell dockerfile-mode company coffee-mode clj-refactor browse-kill-ring base16-theme avy ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
