@@ -163,6 +163,8 @@
 (use-package projectile
   :init
   (setq projectile-switch-project-action 'projectile-dired)
+  :bind
+  ("C-c p" . projectile-command-map)
   :config
   (projectile-global-mode))
 
